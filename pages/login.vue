@@ -187,7 +187,7 @@ export default {
           }
         })
         await this.$apolloHelpers.onLogin(data.loginUser.token)
-        this.$router.push('/lobbies')
+        this.$router.push('/')
       } catch (e) {
         this.errors = true
         console.error(e)

@@ -3,6 +3,7 @@
     class="flex flex-col rounded-lg shadow-lg overflow-hidden"
     @mouseover="hover = true"
     @mouseleave="hover = false"
+    :class="[hover ? '' : '']"
   >
     <div class="flex-shrink-0">
       <img

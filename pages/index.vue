@@ -182,7 +182,7 @@
                   Reports
                 </a>
               </nav>
-              <div class="h-108 bg-gray-700 mx-2 p-4 rounded-lg shadow mt-24">
+              <div class="bg-gray-700 mx-2 p-4 rounded-lg shadow mt-24">
                 <p class="text-xl leading-tight font-medium text-white">
                   Join the
                   <span class="text-pink-600 font-bold">GameFriendly</span> community!
@@ -329,7 +329,7 @@
               </svg>
               Reports
             </a>
-            <div class="h-108 bg-gray-700 mx-2 p-4 rounded-lg shadow-md mt-24">
+            <div class="bg-gray-700 mx-2 p-4 rounded-lg shadow-md mt-24">
               <p class="text-xl leading-tight font-medium text-white">
                 Join the
                 <span class="text-pink-600 font-bold uppercase text-2xl">GameFriendly</span> community!
@@ -495,7 +495,7 @@
               </span>
             </div>
           </div>
-          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-4">
+          <div class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-4 mt-4">
             <div v-for="game in popularGames" :key="game.id">
               <GameCard :game="game" />
             </div>
