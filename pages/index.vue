@@ -13,8 +13,7 @@ export default {
     gameSessions: {
       query: gameSessions
     }
-  },
-  middleware: 'isAuth'
+  }
 }
 </script>
 

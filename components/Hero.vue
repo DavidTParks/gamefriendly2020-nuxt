@@ -184,10 +184,16 @@
           >Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo. Elit sunt amet fugiat veniam occaecat fugiat aliqua.</p>
           <div class="mt-5 max-w-md mx-auto sm:flex sm:justify-center md:mt-8">
             <div class="rounded-md shadow">
-              <a
-                href="#"
+              <nuxt-link
+                v-if="isLoggedIn"
+                to="/lobbies"
                 class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base leading-6 font-medium rounded-md text-white bg-pink-600 hover:bg-pink-500 focus:outline-none focus:shadow-outline-pink transition duration-150 ease-in-out md:py-4 md:text-lg md:px-10"
-              >Get started</a>
+              >Browse Lobbies</nuxt-link>
+              <nuxt-link
+                v-else
+                to="/login"
+                class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base leading-6 font-medium rounded-md text-white bg-pink-600 hover:bg-pink-500 focus:outline-none focus:shadow-outline-pink transition duration-150 ease-in-out md:py-4 md:text-lg md:px-10"
+              >Sign Up</nuxt-link>
             </div>
             <div class="mt-3 rounded-md shadow sm:mt-0 sm:ml-3">
               <a
