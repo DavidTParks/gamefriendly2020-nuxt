@@ -194,7 +194,8 @@
     <div class="hidden md:flex md:flex-shrink-0">
       <div class="flex flex-col w-64 bg-pink-800 pt-5 pb-4">
         <div class="flex items-center flex-shrink-0 px-4">
-          <img class="h-8 w-auto" src="/img/logos/workflow-logo-on-brand.svg" alt="Workflow" />
+          <h1 class="text-white uppercase font-bold">GameFriendly</h1>
+          <!-- <img class="h-8 w-auto" src="/img/logos/workflow-logo-on-brand.svg" alt="Workflow" /> -->
         </div>
         <div class="mt-5 h-0 flex-1 flex flex-col overflow-y-auto">
           <!-- Sidebar component, swap this element with another sidebar if you like -->
@@ -441,12 +442,33 @@
 
       <main class="flex-1 relative z-0 overflow-y-auto py-6 focus:outline-none" tabindex="0">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
-          <h1 class="text-2xl font-semibold text-gray-900">Dashboard</h1>
+          <h1 class="text-2xl font-semibold text-gray-900">Browse</h1>
         </div>
         <div class="max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
           <!-- Replace with your content -->
-          <div class="py-4">
-            <div class="border-4 border-dashed border-gray-200 rounded-lg h-96"></div>
+          <div class="md:flex md:items-center md:justify-between">
+            <div class="flex-1 min-w-0">
+              <h2
+                class="text-2xl font-bold leading-7 text-gray-900 sm:text-3xl sm:leading-9 sm:truncate"
+              >Featured Games</h2>
+            </div>
+            <div class="mt-4 flex md:mt-0 md:ml-4">
+              <span class="shadow-sm rounded-md">
+                <button
+                  type="button"
+                  class="inline-flex items-center px-4 py-2 border border-gray-300 text-sm leading-5 font-medium rounded-md text-gray-700 bg-white hover:text-gray-500 focus:outline-none focus:shadow-outline-blue focus:border-blue-300 active:text-gray-800 active:bg-gray-50 transition duration-150 ease-in-out"
+                >Edit</button>
+              </span>
+              <span class="ml-3 shadow-sm rounded-md">
+                <button
+                  type="button"
+                  class="inline-flex items-center px-4 py-2 border border-transparent text-sm leading-5 font-medium rounded-md text-white bg-pink-600 hover:bg-pink-500 focus:outline-none focus:shadow-outline-pink focus:border-pink-700 active:bg-pink-700 transition duration-150 ease-in-out"
+                >New Lobby</button>
+              </span>
+            </div>
+          </div>
+          <div class="grid grid-cols-6 gap-4">
+            <div v-for="session in gameSessions" :key="session.id">{{session}}</div>
           </div>
           <!-- /End replace -->
         </div>
