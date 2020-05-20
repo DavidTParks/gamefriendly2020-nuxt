@@ -314,6 +314,19 @@
               </svg>
               Reports
             </a>
+            <div class="h-108 bg-gray-700 mx-2 p-4 rounded-lg shadow mt-24">
+              <p class="text-xl leading-tight font-medium text-white">
+                Join the
+                <span class="text-pink-600 font-bold">GameFriendly</span> community!
+              </p>
+              <p
+                class="flex text-sm leading-5 text-gray-500 mt-2"
+              >Discover new games and friends from around the world.</p>
+              <button
+                type="button"
+                class="mt-6 inline-flex items-center px-4 py-2 border border-transparent text-sm leading-5 font-medium rounded-md text-white bg-pink-600 hover:bg-pink-500 focus:outline-none focus:shadow-outline-gray focus:border-pink-700 active:bg-pink-700 transition duration-150 ease-in-out"
+              >Sign Up</button>
+            </div>
           </nav>
         </div>
       </div>
@@ -492,17 +505,23 @@ export default {
       popularGames: []
     }
   },
-  apollo: {
-    gameSessions: {
-      query: gameSessions
-    }
-  },
+  // apollo: {
+  //   gameSessions: {
+  //     query: gameSessions
+  //   }
+  // },
   async fetch() {
     try {
       let { data } = await axios.get(
         'https://rawg.io/api/games?ordering=-added&tags=multiplayer&dates=2015-01-01%2C2020-12-31&page=1&page_size=40&filter=true&comments=true'
       )
       this.popularGames = data.results
+
+      const client = this.$apollo.getClient()
+
+      this.$apollo.query({ gameSessions, variables }).then(({ data }) => {
+        // do what you want with data
+      })
       console.log(data)
     } catch (e) {
       console.log(e)
