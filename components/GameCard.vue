@@ -1,7 +1,26 @@
 <template>
-  <div class="flex flex-col rounded-lg shadow-lg overflow-hidden">
+  <div
+    class="flex flex-col rounded-lg shadow-lg overflow-hidden"
+    @mouseover="hover = true"
+    @mouseleave="hover = false"
+  >
     <div class="flex-shrink-0">
-      <img class="h-48 w-full object-cover" :src="game.background_image" alt />
+      <img
+        v-show="!hover || !game.clip"
+        class="h-48 w-full object-cover transition-250"
+        :src="game.background_image"
+        alt
+      />
+      <video
+        autoplay
+        muted
+        v-if="hover && game.clip"
+        class="h-48 w-full object-cover transition-250"
+        :src="game.clip.clip"
+        alt
+      >
+        <source :src="game.clip.clip" type="video/mp4" />
+      </video>
     </div>
     <div class="flex-1 bg-gray-800 p-6 flex flex-col justify-between">
       <div class="flex-1">
@@ -47,6 +66,11 @@ export default {
   props: {
     game: {
       type: Object
+    }
+  },
+  data() {
+    return {
+      hover: false
     }
   }
 }
