@@ -49,6 +49,7 @@ export default {
   modules: [
     '@nuxtjs/pwa',
     '@nuxtjs/apollo',
+    'nuxt-svg-loader',
     // Doc: https://github.com/nuxt-community/dotenv-module
     '@nuxtjs/dotenv'
   ],

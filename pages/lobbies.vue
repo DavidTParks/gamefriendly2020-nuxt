@@ -1,5 +1,5 @@
 <template>
-  <div class="h-screen flex overflow-hidden bg-gray-100">
+  <div class="h-screen flex overflow-hidden bg-gray-900">
     <!-- Off-canvas menu for mobile -->
     <div class="md:hidden">
       <div class="fixed inset-0 flex z-40" v-show="openSideNav">
@@ -37,7 +37,7 @@
           leave-to-class="-translate-x-full"
         >
           <div
-            class="relative flex-1 flex flex-col max-w-xs w-full pt-5 pb-4 bg-pink-800"
+            class="relative flex-1 flex flex-col max-w-xs w-full pt-5 pb-4 bg-gray-800"
             v-show="openSideNav"
           >
             <div class="absolute top-0 right-0 -mr-14 p-1">
@@ -68,10 +68,10 @@
               <nav class="px-2">
                 <a
                   href="#"
-                  class="group flex items-center px-2 py-2 text-base leading-6 font-medium rounded-md text-white bg-pink-900 focus:outline-none focus:bg-pink-700 transition ease-in-out duration-150"
+                  class="group flex items-center px-2 py-2 text-base leading-6 font-medium rounded-md text-white bg-gray-900 focus:outline-none focus:bg-gray-700 transition ease-in-out duration-150"
                 >
                   <svg
-                    class="mr-4 h-6 w-6 text-pink-400 group-hover:text-pink-300 group-focus:text-pink-300 transition ease-in-out duration-150"
+                    class="mr-4 h-6 w-6 text-gray-400 group-hover:text-gray-300 group-focus:text-gray-300 transition ease-in-out duration-150"
                     stroke="currentColor"
                     fill="none"
                     viewBox="0 0 24 24"
@@ -87,10 +87,10 @@
                 </a>
                 <a
                   href="#"
-                  class="mt-1 group flex items-center px-2 py-2 text-base leading-6 font-medium rounded-md text-pink-300 hover:text-white hover:bg-pink-700 focus:outline-none focus:text-white focus:bg-pink-700 transition ease-in-out duration-150"
+                  class="mt-1 group flex items-center px-2 py-2 text-base leading-6 font-medium rounded-md text-gray-300 hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700 transition ease-in-out duration-150"
                 >
                   <svg
-                    class="mr-4 h-6 w-6 text-pink-400 group-hover:text-pink-300 group-focus:text-pink-300 transition ease-in-out duration-150"
+                    class="mr-4 h-6 w-6 text-gray-400 group-hover:text-gray-300 group-focus:text-gray-300 transition ease-in-out duration-150"
                     stroke="currentColor"
                     fill="none"
                     viewBox="0 0 24 24"
@@ -106,10 +106,10 @@
                 </a>
                 <a
                   href="#"
-                  class="mt-1 group flex items-center px-2 py-2 text-base leading-6 font-medium rounded-md text-pink-300 hover:text-white hover:bg-pink-700 focus:outline-none focus:text-white focus:bg-pink-700 transition ease-in-out duration-150"
+                  class="mt-1 group flex items-center px-2 py-2 text-base leading-6 font-medium rounded-md text-gray-300 hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700 transition ease-in-out duration-150"
                 >
                   <svg
-                    class="mr-4 h-6 w-6 text-pink-400 group-hover:text-pink-300 group-focus:text-pink-300 transition ease-in-out duration-150"
+                    class="mr-4 h-6 w-6 text-gray-400 group-hover:text-gray-300 group-focus:text-gray-300 transition ease-in-out duration-150"
                     stroke="currentColor"
                     fill="none"
                     viewBox="0 0 24 24"
@@ -125,10 +125,10 @@
                 </a>
                 <a
                   href="#"
-                  class="mt-1 group flex items-center px-2 py-2 text-base leading-6 font-medium rounded-md text-pink-300 hover:text-white hover:bg-pink-700 focus:outline-none focus:text-white focus:bg-pink-700 transition ease-in-out duration-150"
+                  class="mt-1 group flex items-center px-2 py-2 text-base leading-6 font-medium rounded-md text-gray-300 hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700 transition ease-in-out duration-150"
                 >
                   <svg
-                    class="mr-4 h-6 w-6 text-pink-400 group-hover:text-pink-300 group-focus:text-pink-300 transition ease-in-out duration-150"
+                    class="mr-4 h-6 w-6 text-gray-400 group-hover:text-gray-300 group-focus:text-gray-300 transition ease-in-out duration-150"
                     stroke="currentColor"
                     fill="none"
                     viewBox="0 0 24 24"
@@ -144,10 +144,10 @@
                 </a>
                 <a
                   href="#"
-                  class="mt-1 group flex items-center px-2 py-2 text-base leading-6 font-medium rounded-md text-pink-300 hover:text-white hover:bg-pink-700 focus:outline-none focus:text-white focus:bg-pink-700 transition ease-in-out duration-150"
+                  class="mt-1 group flex items-center px-2 py-2 text-base leading-6 font-medium rounded-md text-gray-300 hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700 transition ease-in-out duration-150"
                 >
                   <svg
-                    class="mr-4 h-6 w-6 text-pink-400 group-hover:text-pink-300 group-focus:text-pink-300 transition ease-in-out duration-150"
+                    class="mr-4 h-6 w-6 text-gray-400 group-hover:text-gray-300 group-focus:text-gray-300 transition ease-in-out duration-150"
                     stroke="currentColor"
                     fill="none"
                     viewBox="0 0 24 24"
@@ -163,10 +163,10 @@
                 </a>
                 <a
                   href="#"
-                  class="mt-1 group flex items-center px-2 py-2 text-base leading-6 font-medium rounded-md text-pink-300 hover:text-white hover:bg-pink-700 focus:outline-none focus:text-white focus:bg-pink-700 transition ease-in-out duration-150"
+                  class="mt-1 group flex items-center px-2 py-2 text-base leading-6 font-medium rounded-md text-gray-300 hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700 transition ease-in-out duration-150"
                 >
                   <svg
-                    class="mr-4 h-6 w-6 text-pink-400 group-hover:text-pink-300 group-focus:text-pink-300 transition ease-in-out duration-150"
+                    class="mr-4 h-6 w-6 text-gray-400 group-hover:text-gray-300 group-focus:text-gray-300 transition ease-in-out duration-150"
                     stroke="currentColor"
                     fill="none"
                     viewBox="0 0 24 24"
@@ -192,20 +192,20 @@
 
     <!-- Static sidebar for desktop -->
     <div class="hidden md:flex md:flex-shrink-0">
-      <div class="flex flex-col w-64 bg-pink-800 pt-5 pb-4">
+      <div class="flex flex-col w-64 bg-gray-800 pt-5 pb-4">
         <div class="flex items-center flex-shrink-0 px-4">
           <h1 class="text-white uppercase font-bold">GameFriendly</h1>
           <!-- <img class="h-8 w-auto" src="/img/logos/workflow-logo-on-brand.svg" alt="Workflow" /> -->
         </div>
         <div class="mt-5 h-0 flex-1 flex flex-col overflow-y-auto">
           <!-- Sidebar component, swap this element with another sidebar if you like -->
-          <nav class="flex-1 px-2 bg-pink-800">
+          <nav class="flex-1 px-2 bg-gray-800">
             <a
               href="#"
-              class="group flex items-center px-2 py-2 text-sm leading-5 font-medium text-white rounded-md bg-pink-900 focus:outline-none focus:bg-pink-700 transition ease-in-out duration-150"
+              class="group flex items-center px-2 py-2 text-sm leading-5 font-medium text-white rounded-md bg-gray-900 focus:outline-none focus:bg-gray-700 transition ease-in-out duration-150"
             >
               <svg
-                class="mr-3 h-6 w-6 text-pink-400 group-focus:text-pink-300 transition ease-in-out duration-150"
+                class="mr-3 h-6 w-6 text-gray-400 group-focus:text-gray-300 transition ease-in-out duration-150"
                 stroke="currentColor"
                 fill="none"
                 viewBox="0 0 24 24"
@@ -221,10 +221,10 @@
             </a>
             <a
               href="#"
-              class="mt-1 group flex items-center px-2 py-2 text-sm leading-5 font-medium text-pink-300 rounded-md hover:text-white hover:bg-pink-700 focus:outline-none focus:text-white focus:bg-pink-700 transition ease-in-out duration-150"
+              class="mt-1 group flex items-center px-2 py-2 text-sm leading-5 font-medium text-gray-300 rounded-md hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700 transition ease-in-out duration-150"
             >
               <svg
-                class="mr-3 h-6 w-6 text-pink-400 group-hover:text-pink-300 group-focus:text-pink-300 transition ease-in-out duration-150"
+                class="mr-3 h-6 w-6 text-gray-400 group-hover:text-gray-300 group-focus:text-gray-300 transition ease-in-out duration-150"
                 stroke="currentColor"
                 fill="none"
                 viewBox="0 0 24 24"
@@ -240,10 +240,10 @@
             </a>
             <a
               href="#"
-              class="mt-1 group flex items-center px-2 py-2 text-sm leading-5 font-medium text-pink-300 rounded-md hover:text-white hover:bg-pink-700 focus:outline-none focus:text-white focus:bg-pink-700 transition ease-in-out duration-150"
+              class="mt-1 group flex items-center px-2 py-2 text-sm leading-5 font-medium text-gray-300 rounded-md hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700 transition ease-in-out duration-150"
             >
               <svg
-                class="mr-3 h-6 w-6 text-pink-400 group-hover:text-pink-300 group-focus:text-pink-300 transition ease-in-out duration-150"
+                class="mr-3 h-6 w-6 text-gray-400 group-hover:text-gray-300 group-focus:text-gray-300 transition ease-in-out duration-150"
                 stroke="currentColor"
                 fill="none"
                 viewBox="0 0 24 24"
@@ -259,10 +259,10 @@
             </a>
             <a
               href="#"
-              class="mt-1 group flex items-center px-2 py-2 text-sm leading-5 font-medium text-pink-300 rounded-md hover:text-white hover:bg-pink-700 focus:outline-none focus:text-white focus:bg-pink-700 transition ease-in-out duration-150"
+              class="mt-1 group flex items-center px-2 py-2 text-sm leading-5 font-medium text-gray-300 rounded-md hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700 transition ease-in-out duration-150"
             >
               <svg
-                class="mr-3 h-6 w-6 text-pink-400 group-hover:text-pink-300 group-focus:text-pink-300 transition ease-in-out duration-150"
+                class="mr-3 h-6 w-6 text-gray-400 group-hover:text-gray-300 group-focus:text-gray-300 transition ease-in-out duration-150"
                 stroke="currentColor"
                 fill="none"
                 viewBox="0 0 24 24"
@@ -278,10 +278,10 @@
             </a>
             <a
               href="#"
-              class="mt-1 group flex items-center px-2 py-2 text-sm leading-5 font-medium text-pink-300 rounded-md hover:text-white hover:bg-pink-700 focus:outline-none focus:text-white focus:bg-pink-700 transition ease-in-out duration-150"
+              class="mt-1 group flex items-center px-2 py-2 text-sm leading-5 font-medium text-gray-300 rounded-md hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700 transition ease-in-out duration-150"
             >
               <svg
-                class="mr-3 h-6 w-6 text-pink-400 group-hover:text-pink-300 group-focus:text-pink-300 transition ease-in-out duration-150"
+                class="mr-3 h-6 w-6 text-gray-400 group-hover:text-gray-300 group-focus:text-gray-300 transition ease-in-out duration-150"
                 stroke="currentColor"
                 fill="none"
                 viewBox="0 0 24 24"
@@ -297,10 +297,10 @@
             </a>
             <a
               href="#"
-              class="mt-1 group flex items-center px-2 py-2 text-sm leading-5 font-medium text-pink-300 rounded-md hover:text-white hover:bg-pink-700 focus:outline-none focus:text-white focus:bg-pink-700 transition ease-in-out duration-150"
+              class="mt-1 group flex items-center px-2 py-2 text-sm leading-5 font-medium text-gray-300 rounded-md hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700 transition ease-in-out duration-150"
             >
               <svg
-                class="mr-3 h-6 w-6 text-pink-400 group-hover:text-pink-300 group-focus:text-pink-300 transition ease-in-out duration-150"
+                class="mr-3 h-6 w-6 text-gray-400 group-hover:text-gray-300 group-focus:text-gray-300 transition ease-in-out duration-150"
                 stroke="currentColor"
                 fill="none"
                 viewBox="0 0 24 24"
@@ -442,14 +442,14 @@
 
       <main class="flex-1 relative z-0 overflow-y-auto py-6 focus:outline-none" tabindex="0">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
-          <h1 class="text-2xl font-semibold text-gray-900">Browse</h1>
+          <h1 class="text-2xl font-semibold text-white">Browse</h1>
         </div>
         <div class="max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
           <!-- Replace with your content -->
           <div class="md:flex md:items-center md:justify-between">
             <div class="flex-1 min-w-0">
               <h2
-                class="text-2xl font-bold leading-7 text-gray-900 sm:text-3xl sm:leading-9 sm:truncate"
+                class="text-2xl font-bold leading-7 text-white sm:text-3xl sm:leading-9 sm:truncate"
               >Featured Games</h2>
             </div>
             <div class="mt-4 flex md:mt-0 md:ml-4">
@@ -462,13 +462,15 @@
               <span class="ml-3 shadow-sm rounded-md">
                 <button
                   type="button"
-                  class="inline-flex items-center px-4 py-2 border border-transparent text-sm leading-5 font-medium rounded-md text-white bg-pink-600 hover:bg-pink-500 focus:outline-none focus:shadow-outline-pink focus:border-pink-700 active:bg-pink-700 transition duration-150 ease-in-out"
+                  class="inline-flex items-center px-4 py-2 border border-transparent text-sm leading-5 font-medium rounded-md text-white bg-gray-600 hover:bg-gray-500 focus:outline-none focus:shadow-outline-gray focus:border-gray-700 active:bg-gray-700 transition duration-150 ease-in-out"
                 >New Lobby</button>
               </span>
             </div>
           </div>
-          <div class="grid grid-cols-6 gap-4">
-            <div v-for="session in gameSessions" :key="session.id">{{session}}</div>
+          <div class="grid grid-cols-2 lg:grid-cols-3 gap-4 mt-4">
+            <div v-for="game in popularGames" :key="game.id">
+              <GameCard :game="game" />
+            </div>
           </div>
           <!-- /End replace -->
         </div>
@@ -480,17 +482,25 @@
 <script>
 import gameSessions from '~/apollo/queries/gameSessions'
 import { LOGIN_USER } from '~/apollo/mutations/loginUser'
+import axios from 'axios'
 export default {
   middleware: 'isAuth',
-  apollo: {
-    gameSessions: {
-      query: gameSessions
-    }
-  },
   data() {
     return {
       openSideNav: false,
-      profileOpen: false
+      profileOpen: false,
+      popularGames: []
+    }
+  },
+  async fetch() {
+    try {
+      let { data } = await axios.get(
+        'https://rawg.io/api/games/lists/greatest?discover=true&ordering=-added&page_size=40&page=1'
+      )
+      this.popularGames = data.results
+      console.log(data)
+    } catch (e) {
+      console.log(e)
     }
   }
 }
