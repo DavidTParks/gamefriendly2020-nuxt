@@ -62,7 +62,8 @@
               </button>
             </div>
             <div class="flex-shrink-0 flex items-center px-4">
-              <img class="h-8 w-auto" src="/img/logos/workflow-logo-on-brand.svg" alt="Workflow" />
+              <p class="text-white">Beta</p>
+              <h1 class="uppercase font-bold text-3xl uppercase text-pink-600">GameFriendly</h1>
             </div>
             <div class="mt-5 flex-1 h-0 overflow-y-auto">
               <nav class="px-2">
@@ -181,6 +182,19 @@
                   Reports
                 </a>
               </nav>
+              <div class="h-108 bg-gray-700 mx-2 p-4 rounded-lg shadow mt-24">
+                <p class="text-xl leading-tight font-medium text-white">
+                  Join the
+                  <span class="text-pink-600 font-bold">GameFriendly</span> community!
+                </p>
+                <p
+                  class="flex text-sm leading-5 text-gray-500 mt-2"
+                >Discover new games and friends from around the world.</p>
+                <button
+                  type="button"
+                  class="mt-6 inline-flex items-center px-4 py-2 border border-transparent text-sm leading-5 font-medium rounded-md text-white bg-pink-600 hover:bg-pink-500 focus:outline-none focus:shadow-outline-gray focus:border-pink-700 active:bg-pink-700 transition duration-150 ease-in-out"
+                >Sign Up</button>
+              </div>
             </div>
           </div>
           <div class="flex-shrink-0 w-14">
@@ -193,8 +207,9 @@
     <!-- Static sidebar for desktop -->
     <div class="hidden md:flex md:flex-shrink-0">
       <div class="flex flex-col w-64 bg-gray-800 pt-5 pb-4">
-        <div class="flex items-center flex-shrink-0 px-4">
-          <h1 class="uppercase font-bold text-2xl uppercase text-pink-600">GameFriendly</h1>
+        <div class="flex items-start flex-shrink-0 px-4 flex-col justify-center">
+          <p class="text-gray-300 text-sm">Beta</p>
+          <h1 class="uppercase font-bold text-3xl uppercase text-pink-600">GameFriendly</h1>
           <!-- <img class="h-8 w-auto" src="/img/logos/workflow-logo-on-brand.svg" alt="Workflow" /> -->
         </div>
         <div class="mt-5 h-0 flex-1 flex flex-col overflow-y-auto">
@@ -314,7 +329,7 @@
               </svg>
               Reports
             </a>
-            <div class="h-108 bg-gray-700 mx-2 p-4 rounded-lg shadow mt-24">
+            <div class="h-108 bg-gray-700 mx-2 p-4 rounded-lg shadow-md mt-24">
               <p class="text-xl leading-tight font-medium text-white">
                 Join the
                 <span class="text-pink-600 font-bold">GameFriendly</span> community!
