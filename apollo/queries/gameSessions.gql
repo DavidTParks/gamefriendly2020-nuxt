@@ -1,0 +1,14 @@
+{
+  gameSessions {
+    id
+    title
+    active
+    updatedAt
+    createdAt
+    user {
+      id
+      name
+      email
+    }
+  }
+}
