@@ -449,7 +449,7 @@
           <div class="md:flex md:items-center md:justify-between">
             <div class="flex-1 min-w-0">
               <h2
-                class="text-2xl font-bold leading-7 text-white sm:text-3xl sm:leading-9 sm:truncate"
+                class="text-2xl font-bold leading-7 text-pink-600 sm:text-3xl sm:leading-9 sm:truncate"
               >Featured Games</h2>
             </div>
             <div class="mt-4 flex md:mt-0 md:ml-4">
@@ -462,12 +462,12 @@
               <span class="ml-3 shadow-sm rounded-md">
                 <button
                   type="button"
-                  class="inline-flex items-center px-4 py-2 border border-transparent text-sm leading-5 font-medium rounded-md text-white bg-gray-600 hover:bg-gray-500 focus:outline-none focus:shadow-outline-gray focus:border-gray-700 active:bg-gray-700 transition duration-150 ease-in-out"
+                  class="inline-flex items-center px-4 py-2 border border-transparent text-sm leading-5 font-medium rounded-md text-white bg-pink-600 hover:bg-pink-500 focus:outline-none focus:shadow-outline-gray focus:border-pink-700 active:bg-pink-700 transition duration-150 ease-in-out"
                 >New Lobby</button>
               </span>
             </div>
           </div>
-          <div class="grid grid-cols-2 lg:grid-cols-3 gap-4 mt-4">
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-4">
             <div v-for="game in popularGames" :key="game.id">
               <GameCard :game="game" />
             </div>
@@ -492,10 +492,15 @@ export default {
       popularGames: []
     }
   },
+  apollo: {
+    gameSessions: {
+      query: gameSessions
+    }
+  },
   async fetch() {
     try {
       let { data } = await axios.get(
-        'https://rawg.io/api/games/lists/greatest?discover=true&ordering=-added&page_size=40&page=1'
+        'https://rawg.io/api/games?ordering=-added&tags=multiplayer&dates=2015-01-01%2C2020-12-31&page=1&page_size=40&filter=true&comments=true'
       )
       this.popularGames = data.results
       console.log(data)

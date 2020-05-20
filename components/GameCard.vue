@@ -24,7 +24,7 @@
     </div>
     <div class="flex-1 bg-gray-800 p-6 flex flex-col justify-between">
       <div class="flex-1">
-        <p class="text-sm leading-5 font-medium text-pink-600 flex items-center space-x-1">
+        <p class="text-sm leading-5 font-medium text-pink-600 flex items-center space-x-2">
           <template v-for="platform in game.platforms">
             <PlatformBadge :key="platform.id" :platform="platform.platform.name"></PlatformBadge>
           </template>
