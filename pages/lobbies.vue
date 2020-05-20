@@ -194,7 +194,7 @@
     <div class="hidden md:flex md:flex-shrink-0">
       <div class="flex flex-col w-64 bg-gray-800 pt-5 pb-4">
         <div class="flex items-center flex-shrink-0 px-4">
-          <h1 class="text-white uppercase font-bold">GameFriendly</h1>
+          <h1 class="uppercase font-bold text-2xl uppercase text-pink-600">GameFriendly</h1>
           <!-- <img class="h-8 w-auto" src="/img/logos/workflow-logo-on-brand.svg" alt="Workflow" /> -->
         </div>
         <div class="mt-5 h-0 flex-1 flex flex-col overflow-y-auto">
@@ -529,3 +529,9 @@ export default {
   }
 }
 </script>
+
+<style>
+html {
+  font-family: 'Kanit', sans-serif;
+}
+</style>
