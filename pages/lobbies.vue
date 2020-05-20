@@ -332,7 +332,7 @@
             <div class="h-108 bg-gray-700 mx-2 p-4 rounded-lg shadow-md mt-24">
               <p class="text-xl leading-tight font-medium text-white">
                 Join the
-                <span class="text-pink-600 font-bold">GameFriendly</span> community!
+                <span class="text-pink-600 font-bold uppercase text-2xl">GameFriendly</span> community!
               </p>
               <p
                 class="flex text-sm leading-5 text-gray-500 mt-2"
