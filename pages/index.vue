@@ -514,23 +514,17 @@ export default {
       popularGames: []
     }
   },
-  // apollo: {
-  //   gameSessions: {
-  //     query: gameSessions
-  //   }
-  // },
+  apollo: {
+    gameSessions: {
+      query: gameSessions
+    }
+  },
   async fetch() {
     try {
       let { data } = await axios.get(
         'https://rawg.io/api/games?ordering=-added&tags=multiplayer&dates=2015-01-01%2C2020-12-31&page=1&page_size=40&filter=true&comments=true'
       )
       this.popularGames = data.results
-
-      const client = this.$apollo.getClient()
-
-      this.$apollo.query({ gameSessions, variables }).then(({ data }) => {
-        // do what you want with data
-      })
       console.log(data)
     } catch (e) {
       console.log(e)
