@@ -250,6 +250,8 @@
                   </svg>
                 </div>
                 <input
+                  v-model="seachField"
+                  @keyup.enter="searchApi"
                   id="search_field"
                   class="block w-full h-full pl-8 pr-3 py-2 rounded-md text-gray-900 placeholder-gray-500 focus:outline-none focus:placeholder-gray-400 sm:text-sm"
                   placeholder="Search"
@@ -294,13 +296,15 @@
 import gameSessions from '~/apollo/queries/gameSessions'
 import { LOGIN_USER } from '~/apollo/mutations/loginUser'
 import Controller from '~/assets/images/gamepad-solid.svg'
+import axios from 'axios'
 export default {
   data() {
     return {
       showBanner: false,
       openSideNav: false,
       profileOpen: false,
-      showLoginModal: false
+      showLoginModal: false,
+      seachField: ''
     }
   },
   components: {
@@ -312,6 +316,12 @@ export default {
     },
     openLobbyModal() {
       this.$store.commit('setLobbyModal', true)
+    },
+    searchApi() {
+      this.$router.push({
+        path: this.$route.path,
+        query: { game: this.seachField }
+      })
     }
   },
   computed: {

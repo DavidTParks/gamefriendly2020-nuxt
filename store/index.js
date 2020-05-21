@@ -1,6 +1,7 @@
 export const state = () => ({
   authToken: '',
-  showLobbyModal: false
+  showLobbyModal: false,
+  currentGames: []
 })
 
 export const mutations = {
@@ -12,5 +13,8 @@ export const mutations = {
   },
   setLobbyModal(state, showLobbyModal) {
     state.showLobbyModal = showLobbyModal
+  },
+  setCurrentGames(state, games) {
+    state.currentGames = games
   }
 }

@@ -37,7 +37,7 @@
       </template>
       <template v-else>
         <div class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-4 mt-4">
-          <template v-for="game in popularGames">
+          <template v-for="game in currentGames">
             <GameCard :game="game" :key="game.id" />
           </template>
         </div>
@@ -60,13 +60,28 @@ export default {
   middleware: 'isAuth',
   async fetch() {
     try {
-      let { data } = await axios.get(
-        'https://rawg.io/api/games?ordering=-added&tags=multiplayer&dates=2015-01-01%2C2020-12-31&page=1&page_size=40&filter=true&comments=true'
-      )
-      this.popularGames = data.results
+      if (this.$route.query.game) {
+        let { data } = await axios.get(
+          `https://rawg.io/api/games?search=${this.$route.query.game}`
+        )
+        console.log('Query search')
+        this.$store.commit('setCurrentGames', data.results)
+      } else {
+        let { data } = await axios.get(
+          'https://rawg.io/api/games?ordering=-added&tags=multiplayer&dates=2015-01-01%2C2020-12-31&page=1&page_size=40&filter=true&comments=true'
+        )
+        this.$router.push({
+          path: this.$route.path,
+          query: {}
+        })
+        this.$store.commit('setCurrentGames', data.results)
+      }
     } catch (e) {
       console.log(e)
     }
+  },
+  watch: {
+    '$route.query': '$fetch'
   },
   methods: {
     closeLobbyModal() {
@@ -79,6 +94,9 @@ export default {
   computed: {
     isAuthenticated() {
       return this.$store.state.authToken.length > 0
+    },
+    currentGames() {
+      return this.$store.state.currentGames
     }
   }
 }
