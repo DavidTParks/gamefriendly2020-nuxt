@@ -65,7 +65,7 @@
             </div>
           </div>
         </div>
-        <div class="mt-6">
+        <div class="mt-6" v-if="showLogin">
           <form action="#" method="POST" @submit.prevent="onSubmit">
             <div>
               <label
@@ -129,14 +129,59 @@
               </span>
             </div>
           </form>
+          <div class="mt-3">
+            <span class="flex w-full rounded-md shadow-sm">
+              <button
+                @click="showLogin = false"
+                type="button"
+                class="inline-flex justify-center w-full rounded-md border border-transparent px-4 py-2 bg-gray-600 text-base leading-6 font-medium text-white shadow-sm hover:bg-gray-500 focus:outline-none focus:border-gray-700 focus:shadow-outline-gray transition ease-in-out duration-150 sm:text-sm sm:leading-5"
+              >Sign Up</button>
+            </span>
+          </div>
         </div>
-        <div class="mt-3">
-          <span class="flex w-full rounded-md shadow-sm">
-            <button
-              type="button"
-              class="inline-flex justify-center w-full rounded-md border border-transparent px-4 py-2 bg-gray-600 text-base leading-6 font-medium text-white shadow-sm hover:bg-gray-500 focus:outline-none focus:border-gray-700 focus:shadow-outline-gray transition ease-in-out duration-150 sm:text-sm sm:leading-5"
-            >Sign Up</button>
-          </span>
+        <div class="mt-6" v-else>
+          <form action="#" method="POST" @submit.prevent="signUp">
+            <div>
+              <label
+                for="email"
+                class="block text-sm font-medium leading-5 text-gray-700"
+              >Email address</label>
+              <div class="mt-1 rounded-md shadow-sm">
+                <input
+                  v-model="email"
+                  id="email"
+                  type="email"
+                  required
+                  class="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md placeholder-gray-400 focus:outline-none focus:shadow-outline-blue focus:border-blue-300 transition duration-150 ease-in-out sm:text-sm sm:leading-5"
+                />
+              </div>
+            </div>
+
+            <div class="mt-6">
+              <label
+                for="password"
+                class="block text-sm font-medium leading-5 text-gray-700"
+              >Password</label>
+              <div class="mt-1 rounded-md shadow-sm">
+                <input
+                  v-model="password"
+                  id="password"
+                  type="password"
+                  required
+                  class="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md placeholder-gray-400 focus:outline-none focus:shadow-outline-blue focus:border-blue-300 transition duration-150 ease-in-out sm:text-sm sm:leading-5"
+                />
+              </div>
+            </div>
+            <div class="mt-6">
+              <span class="block w-full rounded-md shadow-sm">
+                <button
+                  @cick="showLogin = true"
+                  type="submit"
+                  class="w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-pink-600 hover:bg-pink-500 focus:outline-none focus:border-pink-700 focus:shadow-outline-pink active:bg-pink-700 transition duration-150 ease-in-out"
+                >Register</button>
+              </span>
+            </div>
+          </form>
         </div>
       </div>
     </transition>
@@ -159,12 +204,17 @@ export default {
     return {
       email: '',
       password: '',
+      showLogin: true,
       errors: false
     }
   },
   methods: {
     closeModal() {
+      this.showLogin = true
       this.$emit('close')
+    },
+    openSignupModal() {
+      this.showLogin = false
     },
     async onSubmit() {
       this.errors = false
@@ -184,6 +234,9 @@ export default {
         this.errors = true
         console.error(e)
       }
+    },
+    async signUp() {
+      console.log('Signing up')
     }
   },
   computed: {
