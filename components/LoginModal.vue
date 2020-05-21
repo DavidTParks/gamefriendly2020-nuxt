@@ -1,7 +1,7 @@
 <template>
   <div
     v-show="showLoginModal"
-    class="fixed bottom-0 inset-x-0 px-4 pb-6 sm:inset-0 sm:p-0 sm:flex sm:items-center sm:justify-center"
+    class="fixed bottom-0 inset-x-0 px-4 pb-6 sm:inset-0 sm:p-0 sm:flex sm:items-center sm:justify-center z-50"
   >
     <!--
     Background overlay, show/hide based on modal state.
