@@ -5,6 +5,11 @@
       v-if="platform.indexOf('PlayStation 5') !== -1"
       class="h-5 w-5 text-pink-600 fill-current"
     />
+    <Nintendo
+      v-if="platform.indexOf('Nintendo') !== -1"
+      class="h-5 w-5 text-pink-600 fill-current"
+    />
+
     <Windows v-if="platform.indexOf('PC') !== -1" class="h-5 w-5 text-pink-600 fill-current" />
     <Apple v-if="platform.indexOf('macOS') !== -1" class="h-5 w-5 text-pink-600 fill-current" />
     <Linux v-if="platform.indexOf('Linux') !== -1" class="h-5 w-5 text-pink-600 fill-current" />
@@ -21,6 +26,7 @@ import Windows from '~/assets/images/windows-brands.svg'
 import Apple from '~/assets/images/apple-brands.svg'
 import Android from '~/assets/images/android-brands.svg'
 import iOS from '~/assets/images/mobile-solid.svg'
+import Nintendo from '~/assets/images/brand-nintendo.svg'
 export default {
   props: ['platform'],
   components: {
@@ -30,7 +36,8 @@ export default {
     Windows,
     Apple,
     iOS,
-    Android
+    Android,
+    Nintendo
   }
 }
 </script>
