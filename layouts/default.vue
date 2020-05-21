@@ -67,8 +67,8 @@
             </div>
             <div class="mt-5 flex-1 h-0 overflow-y-auto">
               <nav class="px-2">
-                <a
-                  href="#"
+                <nuxt-link
+                  to="/"
                   class="group flex items-center px-2 py-2 text-base leading-6 font-medium rounded-md text-white bg-gray-900 focus:outline-none focus:bg-gray-700 transition ease-in-out duration-150"
                 >
                   <svg
@@ -85,7 +85,7 @@
                     />
                   </svg>
                   Dashboard
-                </a>
+                </nuxt-link>
                 <nuxt-link
                   to="/lobbies"
                   class="mt-1 group flex items-center px-2 py-2 text-base leading-6 font-medium rounded-md text-gray-300 hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700 transition ease-in-out duration-150"
@@ -109,20 +109,9 @@
                   href="#"
                   class="mt-1 group flex items-center px-2 py-2 text-base leading-6 font-medium rounded-md text-gray-300 hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700 transition ease-in-out duration-150"
                 >
-                  <svg
+                  <Controller
                     class="mr-4 h-6 w-6 text-gray-400 group-hover:text-gray-300 group-focus:text-gray-300 transition ease-in-out duration-150"
-                    stroke="currentColor"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"
-                    />
-                  </svg>
-                  Projects
+                  />Games
                 </a>
                 <a
                   href="#"
@@ -216,8 +205,8 @@
         <div class="mt-5 h-0 flex-1 flex flex-col overflow-y-auto">
           <!-- Sidebar component, swap this element with another sidebar if you like -->
           <nav class="flex-1 px-2 bg-gray-800">
-            <a
-              href="#"
+            <nuxt-link
+              to="/"
               class="group flex items-center px-2 py-2 text-sm leading-5 font-medium text-white rounded-md bg-gray-900 focus:outline-none focus:bg-gray-700 transition ease-in-out duration-150"
             >
               <svg
@@ -234,7 +223,7 @@
                 />
               </svg>
               Dashboard
-            </a>
+            </nuxt-link>
             <nuxt-link
               to="lobbies"
               class="mt-1 group flex items-center px-2 py-2 text-sm leading-5 font-medium text-gray-300 rounded-md hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700 transition ease-in-out duration-150"
@@ -258,20 +247,9 @@
               href="#"
               class="mt-1 group flex items-center px-2 py-2 text-sm leading-5 font-medium text-gray-300 rounded-md hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700 transition ease-in-out duration-150"
             >
-              <svg
-                class="mr-3 h-6 w-6 text-gray-400 group-hover:text-gray-300 group-focus:text-gray-300 transition ease-in-out duration-150"
-                stroke="currentColor"
-                fill="none"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"
-                />
-              </svg>
-              Projects
+              <Controller
+                class="mr-4 h-6 w-6 text-gray-400 group-hover:text-gray-300 group-focus:text-gray-300 transition ease-in-out duration-150"
+              />Games
             </a>
             <a
               href="#"
@@ -428,6 +406,7 @@
 <script>
 import gameSessions from '~/apollo/queries/gameSessions'
 import { LOGIN_USER } from '~/apollo/mutations/loginUser'
+import Controller from '~/assets/images/gamepad-solid.svg'
 export default {
   data() {
     return {
@@ -437,6 +416,9 @@ export default {
       showLoginModal: false,
       newLobbyModal: false
     }
+  },
+  components: {
+    Controller
   },
   computed: {
     isAuthenticated() {

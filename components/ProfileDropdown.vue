@@ -1,6 +1,6 @@
 <template>
   <!-- Profile dropdown -->
-  <div class="ml-3 relative">
+  <div class="ml-3 relative z-10">
     <div>
       <button
         @click="profileOpen = !profileOpen"

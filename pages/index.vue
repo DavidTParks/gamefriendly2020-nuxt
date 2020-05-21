@@ -27,7 +27,7 @@
         </div>
       </div>
       <template v-if="$fetchState.pending">
-        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 px-6 pt-6">
+        <div class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-4 mt-4">
           <content-placeholders v-for="n in 9" :rounded="true" :key="n">
             <content-placeholders-img />
             <content-placeholders-heading />
@@ -53,10 +53,6 @@ import axios from 'axios'
 export default {
   data() {
     return {
-      openSideNav: false,
-      profileOpen: false,
-      showLoginModal: false,
-      newLobbyModal: false,
       popularGames: []
     }
   },
