@@ -346,7 +346,7 @@
               >Sign Up</button>
               <button
                 v-else
-                @click="showLoginModal = !showLoginModal"
+                @click="newLobbyModal = !newLobbyModal"
                 type="button"
                 class="mt-6 inline-flex items-center px-4 py-2 border border-transparent text-sm leading-5 font-medium rounded-md text-white bg-pink-600 hover:bg-pink-500 focus:outline-none focus:shadow-outline-gray focus:border-pink-700 active:bg-pink-700 transition duration-150 ease-in-out"
               >New Lobby</button>
@@ -409,7 +409,13 @@
               </svg>
             </button>
 
-            <ProfileDropdown />
+            <ProfileDropdown v-if="isAuthenticated" />
+            <button
+              v-else
+              @click="showLoginModal = !showLoginModal"
+              type="button"
+              class="relative ml-3 items-center px-4 py-2 border border-transparent text-sm leading-5 font-medium rounded-md text-white bg-pink-600 hover:bg-pink-500 focus:outline-none focus:shadow-outline-gray focus:border-pink-700 active:bg-pink-700 transition duration-150 ease-in-out"
+            >Sign Up</button>
           </div>
         </div>
       </div>
@@ -464,6 +470,7 @@ export default {
       openSideNav: false,
       profileOpen: false,
       showLoginModal: false,
+      newLobbyModal: false,
       popularGames: []
     }
   },
