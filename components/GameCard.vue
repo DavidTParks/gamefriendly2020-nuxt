@@ -1,6 +1,6 @@
 <template>
   <div
-    class="flex flex-col rounded-lg shadow-lg overflow-hidden"
+    class="flex flex-col rounded-lg shadow-lg overflow-hidden relative"
     @mouseover="hover = true"
     @mouseleave="hover = false"
     :class="[hover ? '' : '']"
