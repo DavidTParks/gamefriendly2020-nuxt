@@ -16,10 +16,11 @@
             <button
               type="button"
               class="inline-flex items-center px-4 py-2 border border-gray-300 text-sm leading-5 font-medium rounded-md text-gray-700 bg-white hover:text-gray-500 focus:outline-none focus:shadow-outline-blue focus:border-blue-300 active:text-gray-800 active:bg-gray-50 transition duration-150 ease-in-out"
-            >Edit</button>
+            >Sort By</button>
           </span>
-          <span class="ml-3 shadow-sm rounded-md">
+          <span class="ml-3 shadow-sm rounded-md" v-if="isAuthenticated">
             <button
+              @click="showLobbyModal"
               type="button"
               class="inline-flex items-center px-4 py-2 border border-transparent text-sm leading-5 font-medium rounded-md text-white bg-pink-600 hover:bg-pink-500 focus:outline-none focus:shadow-outline-gray focus:border-pink-700 active:bg-pink-700 transition duration-150 ease-in-out"
             >New Lobby</button>
@@ -65,6 +66,14 @@ export default {
       this.popularGames = data.results
     } catch (e) {
       console.log(e)
+    }
+  },
+  methods: {
+    closeLobbyModal() {
+      this.$store.commit('setLobbyModal', false)
+    },
+    openLobbyModal() {
+      this.$store.commit('setLobbyModal', true)
     }
   },
   computed: {

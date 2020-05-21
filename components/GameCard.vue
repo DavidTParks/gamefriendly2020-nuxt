@@ -1,5 +1,6 @@
 <template>
   <div
+    @click="goToLobbies"
     class="flex flex-col rounded-lg shadow-lg overflow-hidden relative"
     @mouseover="hover = true"
     @mouseleave="hover = false"
@@ -75,6 +76,12 @@ export default {
   data() {
     return {
       hover: false
+    }
+  },
+  methods: {
+    parsePlatforms(platforms) {},
+    goToLobbies() {
+      this.$router.push('/lobbies')
     }
   }
 }

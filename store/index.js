@@ -1,6 +1,6 @@
 export const state = () => ({
   authToken: '',
-  client: {}
+  showLobbyModal: false
 })
 
 export const mutations = {
@@ -9,5 +9,8 @@ export const mutations = {
   },
   setClient(state, client) {
     state.client = client
+  },
+  setLobbyModal(state, showLobbyModal) {
+    state.showLobbyModal = showLobbyModal
   }
 }

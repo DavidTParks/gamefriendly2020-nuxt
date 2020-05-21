@@ -324,7 +324,7 @@
               >Sign Up</button>
               <button
                 v-else
-                @click="newLobbyModal = !newLobbyModal"
+                @click="openLobbyModal"
                 type="button"
                 class="mt-6 inline-flex items-center px-4 py-2 border border-transparent text-sm leading-5 font-medium rounded-md text-white bg-pink-600 hover:bg-pink-500 focus:outline-none focus:shadow-outline-gray focus:border-pink-700 active:bg-pink-700 transition duration-150 ease-in-out"
               >New Lobby</button>
@@ -399,6 +399,7 @@
       </div>
       <nuxt />
       <LoginModal @close="showLoginModal = false" :show-login-modal="showLoginModal" />
+      <NewLobbyModal @close="closeLobbyModal" :show-lobby-modal="showLobbyModal" />
     </div>
   </div>
 </template>
@@ -413,16 +414,26 @@ export default {
       showBanner: false,
       openSideNav: false,
       profileOpen: false,
-      showLoginModal: false,
-      newLobbyModal: false
+      showLoginModal: false
     }
   },
   components: {
     Controller
   },
+  methods: {
+    closeLobbyModal() {
+      this.$store.commit('setLobbyModal', false)
+    },
+    openLobbyModal() {
+      this.$store.commit('setLobbyModal', true)
+    }
+  },
   computed: {
     isAuthenticated() {
       return this.$store.state.authToken.length > 0
+    },
+    showLobbyModal() {
+      return this.$store.state.showLobbyModal
     }
   }
 }
