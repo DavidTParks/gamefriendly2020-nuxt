@@ -191,6 +191,7 @@
                   class="flex text-sm leading-5 text-gray-500 mt-2"
                 >Discover new games and friends from around the world.</p>
                 <button
+                  @click="showLoginModal = !showLoginModal"
                   type="button"
                   class="mt-6 inline-flex items-center px-4 py-2 border border-transparent text-sm leading-5 font-medium rounded-md text-white bg-pink-600 hover:bg-pink-500 focus:outline-none focus:shadow-outline-gray focus:border-pink-700 active:bg-pink-700 transition duration-150 ease-in-out"
                 >Sign Up</button>
@@ -338,6 +339,7 @@
                 class="flex text-sm leading-5 text-gray-500 mt-2"
               >Discover new games and friends from around the world.</p>
               <button
+                @click="showLoginModal = !showLoginModal"
                 type="button"
                 class="mt-6 inline-flex items-center px-4 py-2 border border-transparent text-sm leading-5 font-medium rounded-md text-white bg-pink-600 hover:bg-pink-500 focus:outline-none focus:shadow-outline-gray focus:border-pink-700 active:bg-pink-700 transition duration-150 ease-in-out"
               >Sign Up</button>
@@ -417,16 +419,6 @@
                   />
                 </button>
               </div>
-              <!--
-              Profile dropdown panel, show/hide based on dropdown state.
-
-              Entering: "transition ease-out duration-100"
-                From: "transform opacity-0 scale-95"
-                To: "transform opacity-100 scale-100"
-              Leaving: "transition ease-in duration-75"
-                From: "transform opacity-100 scale-100"
-                To: "transform opacity-0 scale-95"
-              -->
               <transition
                 enter-active-class="transition ease-out duration-100"
                 enter-class="transform opacity-0 scale-95"
@@ -503,6 +495,7 @@
           <!-- /End replace -->
         </div>
       </main>
+      <LoginModal @close="showLoginModal = false" :show-login-modal="showLoginModal" />
     </div>
   </div>
 </template>
@@ -517,6 +510,7 @@ export default {
     return {
       openSideNav: false,
       profileOpen: false,
+      showLoginModal: false,
       popularGames: []
     }
   },
