@@ -19,8 +19,17 @@ export default {
             id
             title
             active
+            game
+            description
+            discord
             updatedAt
             createdAt
+            user {
+              id
+              name
+              email
+              username
+            }
           }
         }
       `
