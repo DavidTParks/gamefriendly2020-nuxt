@@ -20,7 +20,7 @@
           </span>
           <span class="ml-3 shadow-sm rounded-md" v-if="isAuthenticated">
             <button
-              @click="showLobbyModal"
+              @click="openLobbyModal"
               type="button"
               class="inline-flex items-center px-4 py-2 border border-transparent text-sm leading-5 font-medium rounded-md text-white bg-pink-600 hover:bg-pink-500 focus:outline-none focus:shadow-outline-gray focus:border-pink-700 active:bg-pink-700 transition duration-150 ease-in-out"
             >New Lobby</button>

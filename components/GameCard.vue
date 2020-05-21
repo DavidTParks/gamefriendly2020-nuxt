@@ -81,7 +81,10 @@ export default {
   methods: {
     parsePlatforms(platforms) {},
     goToLobbies() {
-      this.$router.push('/lobbies')
+      this.$router.push({
+        path: '/lobbies',
+        query: { game: this.game.id }
+      })
     }
   }
 }

@@ -9,37 +9,30 @@
 
 <script>
 import gql from 'graphql-tag'
+import { GAME_SESSIONS_BY_GAME } from '~/apollo/queries/gameSessionsByGame.js'
 export default {
   data() {
     return {
       gameSessions: []
     }
   },
+  watch: {
+    '$route.query': '$fetch'
+  },
   async fetch() {
     const client = this.$apollo.getClient()
-    const { data } = await client.query({
-      query: gql`
-        {
-          gameSessions {
-            id
-            title
-            active
-            game
-            description
-            discord
-            updatedAt
-            createdAt
-            user {
-              id
-              name
-              email
-              username
-            }
-          }
+    console.log('Inside fetch')
+    if (this.$route.query.game) {
+      console.log(this.$route.query.game)
+      console.log('Route has game query')
+      const { data } = await client.query({
+        query: GAME_SESSIONS_BY_GAME,
+        variables: {
+          game: parseInt(this.$route.query.game)
         }
-      `
-    })
-    this.gameSessions = data.gameSessions
+      })
+      this.gameSessions = data.gameSessionByGame
+    }
   }
 }
 </script>
