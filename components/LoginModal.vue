@@ -179,7 +179,7 @@ export default {
         })
         await this.$apolloHelpers.onLogin(data.loginUser.token)
         this.closeModal()
-        this.$router.push('/')
+        window.location.reload(true)
       } catch (e) {
         this.errors = true
         console.error(e)
