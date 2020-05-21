@@ -1,5 +1,5 @@
 <template>
-  <span v-if>
+  <span>
     <Xbox v-if="platform.indexOf('Xbox One') !== -1" class="h-5 w-5 text-pink-600 fill-current" />
     <Playstation
       v-if="platform.indexOf('PlayStation 5') !== -1"
