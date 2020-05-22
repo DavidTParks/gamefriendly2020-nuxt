@@ -65,18 +65,15 @@
             </div>
           </div>
         </div>
-        <div class="mt-6" v-if="showLogin">
+        <div class="mt-6">
           <form action="#" method="POST" @submit.prevent="onSubmit">
             <div>
-              <label
-                for="email"
-                class="block text-sm font-medium leading-5 text-gray-700"
-              >Email address</label>
+              <label for="title" class="block text-sm font-medium leading-5 text-gray-700">Title</label>
               <div class="mt-1 rounded-md shadow-sm">
                 <input
-                  v-model="email"
-                  id="email"
-                  type="email"
+                  v-model="title"
+                  id="title"
+                  type="text"
                   required
                   class="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md placeholder-gray-400 focus:outline-none focus:shadow-outline-blue focus:border-blue-300 transition duration-150 ease-in-out sm:text-sm sm:leading-5"
                 />
@@ -84,80 +81,36 @@
             </div>
 
             <div class="mt-6">
-              <label
-                for="password"
-                class="block text-sm font-medium leading-5 text-gray-700"
-              >Password</label>
+              <label for="game" class="block text-sm font-medium leading-5 text-gray-700">Game</label>
               <div class="mt-1 rounded-md shadow-sm">
                 <input
-                  v-model="password"
-                  id="password"
-                  type="password"
+                  v-model.number="game"
+                  id="game"
                   required
                   class="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md placeholder-gray-400 focus:outline-none focus:shadow-outline-blue focus:border-blue-300 transition duration-150 ease-in-out sm:text-sm sm:leading-5"
                 />
               </div>
             </div>
-
-            <div class="mt-6 flex items-center justify-between">
-              <div class="flex items-center">
-                <input
-                  id="remember_me"
-                  type="checkbox"
-                  class="form-checkbox h-4 w-4 text-pink-600 transition duration-150 ease-in-out"
-                />
-                <label
-                  for="remember_me"
-                  class="ml-2 block text-sm leading-5 text-gray-900"
-                >Remember me</label>
-              </div>
-
-              <div class="text-sm leading-5">
-                <a
-                  href="#"
-                  class="font-medium text-pink-600 hover:text-pink-500 focus:outline-none focus:underline transition ease-in-out duration-150"
-                >Forgot your password?</a>
-              </div>
-            </div>
-
             <div class="mt-6">
-              <span class="block w-full rounded-md shadow-sm">
-                <button
-                  type="submit"
-                  class="w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-pink-600 hover:bg-pink-500 focus:outline-none focus:border-pink-700 focus:shadow-outline-pink active:bg-pink-700 transition duration-150 ease-in-out"
-                >Create</button>
-              </span>
-            </div>
-          </form>
-        </div>
-        <div class="mt-6" v-else>
-          <form action="#" method="POST" @submit.prevent="signUp">
-            <div>
               <label
-                for="email"
+                for="description"
                 class="block text-sm font-medium leading-5 text-gray-700"
-              >Email address</label>
+              >Description</label>
               <div class="mt-1 rounded-md shadow-sm">
                 <input
-                  v-model="email"
-                  id="email"
-                  type="email"
+                  v-model="description"
+                  id="description"
                   required
                   class="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md placeholder-gray-400 focus:outline-none focus:shadow-outline-blue focus:border-blue-300 transition duration-150 ease-in-out sm:text-sm sm:leading-5"
                 />
               </div>
             </div>
-
             <div class="mt-6">
-              <label
-                for="password"
-                class="block text-sm font-medium leading-5 text-gray-700"
-              >Password</label>
+              <label for="discord" class="block text-sm font-medium leading-5 text-gray-700">Discord</label>
               <div class="mt-1 rounded-md shadow-sm">
                 <input
-                  v-model="password"
-                  id="password"
-                  type="password"
+                  v-model="discord"
+                  id="discord"
                   required
                   class="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md placeholder-gray-400 focus:outline-none focus:shadow-outline-blue focus:border-blue-300 transition duration-150 ease-in-out sm:text-sm sm:leading-5"
                 />
@@ -181,7 +134,7 @@
 
 <script>
 import Controller from '~/assets/images/gamepad-solid.svg'
-import { LOGIN_USER } from '~/apollo/mutations/loginUser'
+import { CREATE_GAME_SESSION } from '~/apollo/mutations/createGameSession'
 export default {
   props: {
     showLobbyModal: {
@@ -193,8 +146,11 @@ export default {
   },
   data() {
     return {
-      email: '',
-      password: '',
+      title: '',
+      active: true,
+      game: '',
+      description: '',
+      discord: '',
       showLogin: true,
       errors: false
     }
@@ -209,16 +165,18 @@ export default {
     },
     async onSubmit() {
       this.errors = false
-      const { email, password } = this.credentials
+      const { title, active, game, description, discord } = this.gameSession
       try {
         const { data } = await this.$apollo.mutate({
-          mutation: LOGIN_USER,
+          mutation: CREATE_GAME_SESSION,
           variables: {
-            email,
-            password
+            title,
+            active,
+            game,
+            description,
+            discord
           }
         })
-        await this.$apolloHelpers.onLogin(data.loginUser.token)
         this.closeModal()
         window.location.reload(true)
       } catch (e) {
@@ -231,10 +189,13 @@ export default {
     }
   },
   computed: {
-    credentials() {
+    gameSession() {
       return {
-        email: this.email,
-        password: this.password
+        title: this.title,
+        active: this.active,
+        game: this.game,
+        description: this.description,
+        discord: this.discord
       }
     }
   }

@@ -117,7 +117,7 @@
               <div class="bg-gray-700 mx-2 p-4 rounded-lg shadow mt-24">
                 <p class="text-xl leading-tight font-medium text-white">
                   Join the
-                  <span class="text-pink-600 font-bold">GameFriendly</span> community!
+                  <h3 class="text-pink-600 font-bold">GameFriendly</h3> community!
                 </p>
                 <p
                   class="flex text-sm leading-5 text-gray-500 mt-2"
@@ -195,9 +195,9 @@
               />Games
             </a>
             <div class="bg-gray-700 mx-2 p-4 rounded-lg shadow-md mt-24">
-              <p class="text-xl leading-tight font-medium text-white">
+              <p class="text-xl leading-tight font-medium text-white uppercase">
                 Join the
-                <span class="text-pink-600 font-bold uppercase text-2xl">GameFriendly</span> community!
+                <span class="text-pink-600 font-black uppercase text-2xl">GameFriendly</span> community!
               </p>
               <p
                 class="flex text-sm leading-5 text-gray-500 mt-2"

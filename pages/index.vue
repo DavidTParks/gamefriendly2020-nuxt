@@ -103,10 +103,18 @@ export default {
 </script>
 
 <style lang="scss">
-html {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: 'Kanit', sans-serif;
 }
 
+html {
+  font-family: 'Lato', sans-serif;
+}
 $vue-content-placeholders-primary-color: #2d3748 !default;
 $vue-content-placeholders-secondary-color: #2d3748 !default;
 $vue-content-placeholders-border-radius: 6px !default;
