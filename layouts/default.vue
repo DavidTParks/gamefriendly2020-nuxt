@@ -319,7 +319,7 @@ export default {
     },
     searchApi() {
       this.$router.push({
-        path: this.$route.path,
+        path: '/',
         query: { game: this.seachField }
       })
     }

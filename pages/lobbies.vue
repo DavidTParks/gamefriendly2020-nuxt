@@ -7,11 +7,7 @@
     </template>
     <template v-else>
       <div class="relative">
-        <img
-          class="h-64 w-full object-cover"
-          v-if="selectedGame"
-          :src="selectedGame.background_image"
-        />
+        <img class="w-full object-cover" v-if="selectedGame" :src="selectedGame.background_image" />
       </div>
     </template>
     <div class="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 mt-6">
