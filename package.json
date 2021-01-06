@@ -14,7 +14,7 @@
     "@nuxtjs/apollo": "^4.0.1-rc.1",
     "@nuxtjs/dotenv": "^1.4.0",
     "@nuxtjs/pwa": "^3.0.0-0",
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "nuxt": "^2.0.0",
     "nuxt-svg-loader": "^1.2.0",
     "vue-content-placeholders": "^0.2.1"
